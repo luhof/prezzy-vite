@@ -1,11 +1,10 @@
-# Vue 3 + Typescript + Vite
+# 🧄 Wario Prezzy Companion App 🧄
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This quick'n'dirty project is meant to be a companion app of the Prezzy minigame from [WarioWare : Get It Together](https://www.nintendo.com/games/detail/warioware-get-it-together-switch/) on Nintendo Switch. It is also a way for me to get a grasp on a <b>Vue3 + TypeScript + Tailwind + Vite webapp</b>, so be gentle ;)<br/><br/>
+Data comes from this community-driven [spreadsheet](https://docs.google.com/spreadsheets/d/17638-I9HmVpd7Zkqmrfia63-yFtELkRd/edit). Various visual are shamelessly stolen from the [Mario Wiki](https://www.mariowiki.com/WarioWare:_Get_It_Together!).
 
-## Recommended IDE Setup
+## Setup
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+- install : `npm i`
+- dev server : `npm run dev`
+- prod build : `npm run build`
