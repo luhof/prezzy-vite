@@ -1,6 +1,7 @@
 type Gift = {
     id: number,
     name: string,
-    age: number
+    description: string,
+    rarity: number
 }
 export {Gift}

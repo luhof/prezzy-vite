@@ -1,6 +1,502 @@
-[
-    {"id":"1", "name":"lollipop", "age":"5"},
-    {"id":"2", "name":"car", "age":"30"},
-    {"id":"3", "name":"bus", "age":"50"},
-    {"id":"4", "name":"boomer", "age":"1000"}
-]
+{
+    "1": {
+       "name": "Strand of Hair",
+       "rarity": 1,
+       "description": "This could belong to anyone. Gross. Might make a good gift for those who groom...TOO much."
+    },
+    "2": {
+       "name": "Dandelion Seed",
+       "rarity": 1,
+       "description": "This fluffy seed floats away when you blow on it. Makes adults feel like kids. Effect on kids unknown."
+    },
+    "3": {
+       "name": "Spiderweb",
+       "rarity": 1,
+       "description": "Enemy of housekeepers who don't own ladders. BFF of Halloween enthusiasts. Good work, spiders."
+    },
+    "4": {
+       "name": "Apple Core",
+       "rarity": 1,
+       "description": "Something happened here. Something...delicious. Oh well. Into the compost it goes."
+    },
+    "5": {
+       "name": "Soda-Can Tab",
+       "rarity": 1,
+       "description": "Someone pulled this all the way off the can. Some people collect these to make necklaces. Pretty weird."
+    },
+    "6": {
+       "name": "Empty Can",
+       "rarity": 1,
+       "description": "Great for playing Kick the Can, if you're absolutely, undeniably THAT bored. Please recycle it afterward!"
+    },
+    "7": {
+       "name": "Plastic Bag",
+       "rarity": 1,
+       "description": "You could use this for lots of stuff. Taking groceries to the car, taking them out of the car... Lots of stuff."
+    },
+    "8": {
+       "name": "Shower Cap",
+       "rarity": 1,
+       "description": "Out of all the hats you could wear while taking a shower, this is the least stylish. Who would wear this?"
+    },
+    "9": {
+       "name": "Ribbon",
+       "rarity": 1,
+       "description": "Looks like someone untied this while opening a gift, then kept it for later. How practical!"
+    },
+    "10": {
+       "name": "Cashew",
+       "rarity": 1,
+       "description": "Great for a snack. It takes a lot of work to grow these nuts...but they taste really, really good."
+    },
+    "11": {
+       "name": "Hard Candy",
+       "rarity": 1,
+       "description": "It's soda flavored. Ooh—and it's the kind that sparkles and fizzes on your tongue. That's the best kind!"
+    },
+    "12": {
+       "name": "Cracker",
+       "rarity": 1,
+       "description": "Can't party without one of these! Well, you could probably try, but...no one wants to be at that party."
+    },
+    "13": {
+       "name": "Boiled Egg",
+       "rarity": 1,
+       "description": "Just an egg that's been boiled. Is that disappointing? Lower your expectations a bit. Thank you."
+    },
+    "14": {
+       "name": "Scallion",
+       "rarity": 1,
+       "description": "You might call it a green onion, and you know what? That's fine. You do you."
+    },
+    "15": {
+       "name": "Rubber Plug",
+       "rarity": 1,
+       "description": "A stopper for blocking drains in tubs. Without one of these, you'd have to bathe SUPER fast."
+    },
+    "16": {
+       "name": "Light Bulb",
+       "rarity": 1,
+       "description": "A prop to hold above your head when you get a good idea. It also lights up, if you're into that."
+    },
+    "17": {
+       "name": "Mystery Screw",
+       "rarity": 1,
+       "description": "Some machine must be rattling around without this. Hand it to a tinkerer, or toss it in a junk drawer."
+    },
+    "18": {
+       "name": "Mystery Key",
+       "rarity": 1,
+       "description": "What does it unlock? A treasure chest? A footlocker full of smelly socks? The imagination reels..."
+    },
+    "19": {
+       "name": "Toilet Paper",
+       "rarity": 1,
+       "description": "A cherished tool. Whatever your troubles, if you have this handy, everything will work out in the end."
+    },
+    "20": {
+       "name": "Toothbrush",
+       "rarity": 1,
+       "description": "Essential for good dental hygiene. You could also use one to scrub floors! Just...don't mix them up."
+    },
+    "21": {
+       "name": "Milk",
+       "rarity": 2,
+       "description": "Nutrient-rich cow juice in a cute little bottle. Don't drink too much too fast. Your tummy will thank you."
+    },
+    "22": {
+       "name": "Garlic",
+       "rarity": 2,
+       "description": "Powerful flavor, powerful stench. Makes a stellar seasoning but packs quite a punch. Hwoof!"
+    },
+    "23": {
+       "name": "Banana",
+       "rarity": 2,
+       "description": "A snack with appeal. Ugh. Sorry."
+    },
+    "24": {
+       "name": "Grapes",
+       "rarity": 2,
+       "description": "It's some grapes! Everyone loves grapes. You love grapes too, right? Well, either way...it's some grapes."
+    },
+    "25": {
+       "name": "Smoothie",
+       "rarity": 2,
+       "description": "One hundred percent pureed fruit. Perfect for those who love fruit flavors but hate using their teeth."
+    },
+    "26": {
+       "name": "Meat Dumpling",
+       "rarity": 2,
+       "description": "It's a delicious-looking dumpling! Smells amazing. Mmm... Sorry, what were we talking about?"
+    },
+    "27": {
+       "name": "Ice Cream",
+       "rarity": 2,
+       "description": "As yummy as it is cold. Your taste buds will love you. Your sensitive chompers won't. Sorry, teeth."
+    },
+    "28": {
+       "name": "Donut",
+       "rarity": 2,
+       "description": "The widely popular \"pink with sprinkles\" flavor. Worth waiting in line for...probably."
+    },
+    "29": {
+       "name": "Floppy Disk",
+       "rarity": 2,
+       "description": "A storage device from an ancient time. Might contain some secrets...forbidden, teeny-tiny secrets."
+    },
+    "30": {
+       "name": "Octopus Sausage",
+       "rarity": 2,
+       "description": "No bento box is complete without one of these. Mostly cute. Sort of creepy. All the way edible."
+    },
+    "31": {
+       "name": "Pudding",
+       "rarity": 2,
+       "description": "A delightful, jiggly treat. It even has whipped cream on top! One wobbly bite and bliss will be yours."
+    },
+    "32": {
+       "name": "Rose",
+       "rarity": 2,
+       "description": "A flower that can't NOT be tied to romance. Grip one in your teeth to look dashing—just mind the thorns."
+    },
+    "33": {
+       "name": "Magnet",
+       "rarity": 2,
+       "description": "The letter U but used for science. Great for metal-based experiments or, more often, cartoon hijinks."
+    },
+    "34": {
+       "name": "Paper Wrestler",
+       "rarity": 2,
+       "description": "A paper pugilist for rowdy youths. Drum on the table to engage your opponent! Weak to scissors."
+    },
+    "35": {
+       "name": "Faucet Handle",
+       "rarity": 2,
+       "description": "Someone, somewhere is unable to wash their hands without this. Good as a spare part, perhaps."
+    },
+    "36": {
+       "name": "Cake Roll",
+       "rarity": 2,
+       "description": "A log-shaped delight packed with fruit and frosting. Goes very well with tea."
+    },
+    "37": {
+       "name": "Hamburger",
+       "rarity": 2,
+       "description": "A big, honkin' burger for a big, honkin' appetite. Go on—tear into it like no one's watching. Mmmm."
+    },
+    "38": {
+       "name": "Pizza",
+       "rarity": 2,
+       "description": "Whoa! The cheese on top is extra gooey and delicious... So good! Is this from Mona Pizza?"
+    },
+    "39": {
+       "name": "Ramen",
+       "rarity": 2,
+       "description": "Broth, noodles, and happiness in a bowl. Great as a midnight snack. It's always midnight somewhere..."
+    },
+    "40": {
+       "name": "Japanese Curry",
+       "rarity": 2,
+       "description": "An all-time classic dish celebrated for its spiciness. It might give you rowdy guts, but it's soooo worth it."
+    },
+    "41": {
+       "name": "Rubber Ducky",
+       "rarity": 2,
+       "description": "The king of the tub. A perfect little companion for animal lovers or die-hard bath enthusiasts."
+    },
+    "42": {
+       "name": "Sock",
+       "rarity": 2,
+       "description": "Warm socks with Wario on them. His face warps when you put them on, but it still looks just like him."
+    },
+    "43": {
+       "name": "Disguise Glasses",
+       "rarity": 2,
+       "description": "An incredible disguise that would fool anyone. Use them for daring heists...or to make people laugh."
+    },
+    "44": {
+       "name": "Bicycle Pump",
+       "rarity": 2,
+       "description": "Push the thingy down to make air whoosh out of the little tube hole. That's called physics!"
+    },
+    "45": {
+       "name": "White Plate",
+       "rarity": 2,
+       "description": "It's...a regular plate. Nothing fancy. Perfect for anyone whose kids tend to break things...like plates."
+    },
+    "46": {
+       "name": "Eye-Exam Stick",
+       "rarity": 3,
+       "description": "Covers one eye as you read letters out loud. Call it an \"eye occluder\" to hear people say, \"Huh?\""
+    },
+    "47": {
+       "name": "Mustache Catalog",
+       "rarity": 3,
+       "description": "A respected periodical among facial-hair aficionados. Use it to brush up on 'stache fashion."
+    },
+    "48": {
+       "name": "Piggy Bank",
+       "rarity": 3,
+       "description": "Feels heavy. Could be stuffed with coins and cash...but that widdle face is too cute to smash open."
+    },
+    "49": {
+       "name": "Cactus",
+       "rarity": 3,
+       "description": "A prickly plant stuck mid-shrug. It's OK, buddy. No one expects you to have all the answers."
+    },
+    "50": {
+       "name": "Sunglasses",
+       "rarity": 3,
+       "description": "An extra-chic design. Place them over your eyes to defeat the sun. Your move, space."
+    },
+    "51": {
+       "name": "Matryoshka Doll",
+       "rarity": 3,
+       "description": "A doll within a doll. Within a doll. Within another doll. How many dolls are hiding in here?!"
+    },
+    "52": {
+       "name": "Hunk of Meat",
+       "rarity": 3,
+       "description": "Savory meat in its most ideal form. A perfect meal for boosting one's martial-arts training."
+    },
+    "53": {
+       "name": "Bowling Pin",
+       "rarity": 3,
+       "description": "A pesky upstart who likes to ruin bowling scores. It kinda looks like an alien if you squint."
+    },
+    "54": {
+       "name": "Soccer Ball",
+       "rarity": 3,
+       "description": "A sporty, speckled ball that's fun to kick. You might call it a football, and hey—that's perfectly fine."
+    },
+    "55": {
+       "name": "Rugby Ball",
+       "rarity": 3,
+       "description": "Found rocketing between bruised, flailing sportsmen. An ideal gift for fans of both sports and flailing."
+    },
+    "56": {
+       "name": "Birthday Cake",
+       "rarity": 3,
+       "description": "Happy birthday! We're so glad you're here."
+    },
+    "57": {
+       "name": "Manhole Cover",
+       "rarity": 3,
+       "description": "This Wario-branded treasure has many uses other than covering manholes. Such as...well, many!"
+    },
+    "58": {
+       "name": "Afternoon Tea",
+       "rarity": 3,
+       "description": "A must-have for super-classy folks. All you need is some of those tiny sandwiches and teensy cakes."
+    },
+    "59": {
+       "name": "Mushroom",
+       "rarity": 3,
+       "description": "Mmm, nothing says decadence like a smelly mushroom. You can smell it, can't you? CAN'T YOU?!"
+    },
+    "60": {
+       "name": "Sushi",
+       "rarity": 3,
+       "description": "A delicacy that pairs well with celebrations. Sushi lovers can't get enough of this stuff."
+    },
+    "61": {
+       "name": "Marbled Meat",
+       "rarity": 3,
+       "description": "Stare at the marbling long enough and it'll start to look like art. A fave of foodies and pooches alike."
+    },
+    "62": {
+       "name": "High-Tech Shoes",
+       "rarity": 3,
+       "description": "These kicks are slick, and they fit you perfectly. With these, no racing dream is out of reach."
+    },
+    "63": {
+       "name": "Headphones",
+       "rarity": 3,
+       "description": "A pricey gadget for audiophiles. Can you hear the difference? Pfft, of course you can."
+    },
+    "64": {
+       "name": "Boxing Glove",
+       "rarity": 3,
+       "description": "A boxing champ is nothing without a pair of these. Sweat stains only increase their value."
+    },
+    "65": {
+       "name": "Bat",
+       "rarity": 3,
+       "description": "The smell of the wood transports you back in time. Why am I sniffing a bat? Sheesh, don't be so judgy!"
+    },
+    "66": {
+       "name": "Dumbbell",
+       "rarity": 3,
+       "description": "Lift, and then lift again. Switch sides and repeat ad infinitum. Such is the formula for greatness!"
+    },
+    "67": {
+       "name": "Electric Fan",
+       "rarity": 3,
+       "description": "Talk into it to sound like a robot. Oh, it also cools the room, or whatever."
+    },
+    "68": {
+       "name": "Rafflesia",
+       "rarity": 3,
+       "description": "This is one profoundly pungent flower. A great decoration option for those who hate company."
+    },
+    "69": {
+       "name": "Mobile Phone",
+       "rarity": 3,
+       "description": "An ancient device used in ancient times for communication. It flips closed. What. Even."
+    },
+    "70": {
+       "name": "Digital Camera",
+       "rarity": 3,
+       "description": "A machine that captures memories on shiny memory paper. What is this sorcery?!"
+    },
+    "71": {
+       "name": "Electric Guitar",
+       "rarity": 4,
+       "description": "Just hold this and, blammo, you're cool. Just like that. I think it also makes music."
+    },
+    "72": {
+       "name": "Dual-Sport Bicycle",
+       "rarity": 4,
+       "description": "A sleek yet practical device. Why walk when you can run? Why run when you can bike?"
+    },
+    "73": {
+       "name": "Laptop",
+       "rarity": 4,
+       "description": "A compact, slim design for adults who work on the go but hate carrying heavy stuff."
+    },
+    "74": {
+       "name": "Deer Scare",
+       "rarity": 4,
+       "description": "A tool that keeps doe-linquents at arm's length. Terrifying for them. Soothing and zen-like for humans."
+    },
+    "75": {
+       "name": "Wedding Dress",
+       "rarity": 4,
+       "description": "This dress represents the dream of happily ever after. Do not, I repeat, DO NOT spill on it."
+    },
+    "76": {
+       "name": "Alpenhorn",
+       "rarity": 4,
+       "description": "This instrument brings to mind mountaintops. Yodel-ay-hee-who wouldn't want in on this?"
+    },
+    "77": {
+       "name": "Haniwa Figure",
+       "rarity": 4,
+       "description": "That expression says it all. These things are especially popular with the ladies."
+    },
+    "78": {
+       "name": "Super-Fancy Toilet",
+       "rarity": 4,
+       "description": "This primo toilet is gentle on the bottom, though it may take some getting used to."
+    },
+    "79": {
+       "name": "Tuna",
+       "rarity": 4,
+       "description": "You can tune a piano, but you can't tuna fish. Until now! That's called beating a system."
+    },
+    "80": {
+       "name": "Mandrake Root",
+       "rarity": 4,
+       "description": "It's a plant...right? Wait, it's staring at me. That's super not normal for a plant."
+    },
+    "81": {
+       "name": "Body-Builder Statue",
+       "rarity": 4,
+       "description": "A statue of a buff and hunky Wario. In other words, a statue of Wario. Tear your eyes away...if you can."
+    },
+    "82": {
+       "name": "Minitruck",
+       "rarity": 4,
+       "description": "This thing is both useful and fun to drive. Hop in, and take a whirl around the countryside."
+    },
+    "83": {
+       "name": "Expensive Vase",
+       "rarity": 4,
+       "description": "Break this and it's over. What's over? You don't even want to know. Just don't break it, OK?"
+    },
+    "84": {
+       "name": "Painting",
+       "rarity": 4,
+       "description": "This exquisite piece is the only art you or the world will even need. If you lack taste, the exit's that way."
+    },
+    "85": {
+       "name": "Gold Card",
+       "rarity": 4,
+       "description": "A card that can make all of your wishes come true. If you're not overtly greedy, it's just a card."
+    },
+    "86": {
+       "name": "Golden Egg",
+       "rarity": 4,
+       "description": "It's empty, so don't expect a golden gosling or anything. It is exceptionally round."
+    },
+    "87": {
+       "name": "Red Gem",
+       "rarity": 4,
+       "description": "A huge, bright-red jewel. Some people find the way it twinkles rather enchanting."
+    },
+    "88": {
+       "name": "Cabin Cruiser",
+       "rarity": 4,
+       "description": "Slices through the waves like a knife through so much butter. Live it up, why don't you?"
+    },
+    "89": {
+       "name": "Helicopter",
+       "rarity": 4,
+       "description": "This chopper is proper, but its propeller is sweller."
+    },
+    "90": {
+       "name": "Large-Scale Crane",
+       "rarity": 4,
+       "description": "It's called a crane because kids crane their necks to get a gander. I didn't make that up, really."
+    },
+    "91": {
+       "name": "Gaudy Crown",
+       "rarity": 5,
+       "description": "A real head turner. Great for folks with a take-charge attitude."
+    },
+    "92": {
+       "name": "Golden Toilet",
+       "rarity": 5,
+       "description": "A toilet made of gold. Even your booty deserves the life of luxury."
+    },
+    "93": {
+       "name": "Company Building",
+       "rarity": 5,
+       "description": "Your very own office building. If you want a whole floor dedicated to garlic, that's your call."
+    },
+    "94": {
+       "name": "Golf Course",
+       "rarity": 5,
+       "description": "A paradise for golfers. A gold mine for landscapers. Just an empty field for the rest of us."
+    },
+    "95": {
+       "name": "Desert Island",
+       "rarity": 5,
+       "description": "A lovely island full of plants and animals and the like. For the person who has everything."
+    },
+    "96": {
+       "name": "Luxury Cruise Ship",
+       "rarity": 5,
+       "description": "Maybe no one knows how famous you are yet, but that doesn't mean you can't party it up like a celeb."
+    },
+    "97": {
+       "name": "Jumbo Jet",
+       "rarity": 5,
+       "description": "A jumbo jet for those with jumbo travel needs. Steer clear if you're afraid of heights."
+    },
+    "98": {
+       "name": "Tigronic Model",
+       "rarity": 5,
+       "description": "GASP. It's a crime-fighting, super-duper robot friend! Who doesn't love these things?"
+    },
+    "99": {
+       "name": "Spaceship",
+       "rarity": 5,
+       "description": "The latest and greatest in space travel. The cosmos is your personal playground with this."
+    },
+    "100": {
+       "name": "Giant Meteorite",
+       "rarity": 5,
+       "description": "It's giant! Enormous! Ginormous, even! Don't run into it because, you know, just don't."
+  }
+ }
