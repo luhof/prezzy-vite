@@ -1,0 +1,122 @@
+.character-avatar{
+    background-image:url('characters_sprites.png');
+}
+
+.bg-wario {
+    width: 50px; height: 50px;
+    background-position: -150px -10px;
+}
+
+
+.bg-5volt {
+    width: 50px; height: 45px;
+    background-position: -150px -222px;
+}
+
+
+.bg-9volt {
+    width: 50px; height: 45px;
+    background-position: -220px -222px;
+}
+
+
+.bg-18volt {
+    width: 50px; height: 50px;
+    background-position: -10px -82px;
+}
+
+
+.bg-ana {
+    width: 50px; height: 50px;
+    background-position: -80px -82px;
+}
+
+
+.bg-ashley {
+    width: 50px; height: 45px;
+    background-position: -290px -10px;
+}
+
+
+.bg-cricket {
+    width: 50px; height: 50px;
+    background-position: -150px -82px;
+}
+
+
+.bg-crygor {
+    width: 50px; height: 50px;
+    background-position: -220px -10px;
+}
+
+
+.bg-dribble {
+    width: 50px; height: 50px;
+    background-position: -220px -80px;
+}
+
+
+.bg-jimmy {
+    width: 50px; height: 52px;
+    background-position: -10px -10px;
+}
+
+
+.bg-kat {
+    width: 50px; height: 50px;
+    background-position: -10px -152px;
+}
+
+
+.bg-lulu {
+    width: 50px; height: 48px;
+    background-position: -10px -222px;
+}
+
+
+.bg-mantis {
+    width: 50px; height: 40px;
+    background-position: -290px -139px;
+}
+
+
+.bg-mike {
+    width: 50px; height: 52px;
+    background-position: -80px -10px;
+}
+
+
+.bg-mona {
+    width: 50px; height: 50px;
+    background-position: -80px -152px;
+}
+
+
+.bg-orbulon {
+    width: 50px; height: 50px;
+    background-position: -150px -152px;
+}
+
+
+.bg-penny {
+    width: 50px; height: 48px;
+    background-position: -80px -222px;
+}
+
+
+.bg-pyoro {
+    width: 50px; height: 50px;
+    background-position: -220px -152px;
+}
+
+
+.bg-red {
+    width: 50px; height: 34px;
+    background-position: -290px -199px;
+}
+
+
+.bg-spitz {
+    width: 50px; height: 44px;
+    background-position: -290px -75px;
+}

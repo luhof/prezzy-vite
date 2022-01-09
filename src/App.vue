@@ -3,8 +3,7 @@ import GiftSheet from './components/gift-sheet/GiftSheet.vue'
 </script>
 
 <template>
-  <!--<img alt="Vue logo" src="./assets/logo.png" />-->
-  yo
+  <h1>prezzy guide</h1>
   <GiftSheet/>
 </template>
 

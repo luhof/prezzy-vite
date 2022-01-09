@@ -38,11 +38,11 @@
   
   <div class="flex flex-wrap">
     <div
-      class="prezzy-item m-3"
+      class="prezzy-item m-3 cursor-pointer"
       v-bind:class="'prezzy-item_'+gift.id+'_'"
       v-for="gift in gifts" :key="gift.id" @click="selectGift(gift.id)"
+      v-tooltip="gift.name"
     >
-      {{gift.name}}
     </div>
   </div>
 </template>

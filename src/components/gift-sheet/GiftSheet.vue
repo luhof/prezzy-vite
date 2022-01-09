@@ -26,10 +26,8 @@ export default {
 </script>
 
 <template>
-  <div>Gift Sheet of Doom :)</div>
-  <button @click="changeselectedId">click here to modify selectedId</button>
-  <div id="giftSheet-wrapper" class="grid grid-cols-2 gap-4 m-4">
-    <div id="giftSheet-selector">
+  <div id="giftSheet-wrapper" class="flex m-4">
+    <div id="giftSheet-selector" class="col-span-1">
       <GiftSelector :selectedId="selectedId" @gift-selected="onGiftSelected"/>
     </div>
     <div id="giftSheet-result">
