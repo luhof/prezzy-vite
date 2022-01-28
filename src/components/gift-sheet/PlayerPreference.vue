@@ -54,6 +54,27 @@ export default{
         return currentGift;
       });
 
+      let jobPoints = computed(() => {
+        switch(giftsjson[props.selectedId].rarity){
+          case 1:
+            return "11-19"
+            break;
+           case 2:
+            return "24-36"
+            break;
+           case 3:
+            return "48-72"
+            break;
+           case 4:
+            return "400-600"
+            break;
+           case 5:
+            return "1600-2400"
+            break;
+        }
+        
+      })
+
       let preferences = computed(() => {
         //get current object
         //TODO not very clean...
@@ -68,7 +89,7 @@ export default{
         return result;
       });
 
-      return {preferences, giftInfo, getClassNameForIndex}
+      return {preferences, giftInfo, jobPoints, getClassNameForIndex}
     }
 }
 </script>
@@ -87,7 +108,7 @@ export default{
         </div>
       </div>
       </div>
-      <div class="gift-description bg-white bg-opacity-50 backdrop-blur-md text-black flex items-center p-4">
+      <div class="gift-description bg-white bg-opacity-50 backdrop-blur-sm text-black flex items-center p-4">
         <div>
           <div
               class="prezzy-item bouncing-item"
@@ -99,6 +120,18 @@ export default{
           {{giftInfo.description}}
         </p>
       </div>
+      <div class="gift-rating p-4">
+        <div class="flex justify-center m-1">
+          <img
+            v-bind:src='giftInfo.rarity > 2 ? "goldstar.png":"bluestar.png"'
+            v-for="i in giftInfo.rarity" :key="i"
+          />
+        </div>
+        <div class="flex justify-center jobpoints">
+          ({{jobPoints}} Job Points)
+        </div>
+      </div>
+
       
     </div>
     <div v-for="(preference, index) in preferences" class="flex">
@@ -129,7 +162,7 @@ export default{
     margin : 0.5rem;
   }
  
-  .gift-header{
+  .gift-header, .gift-rating{
     background-color : #007f9a;
   }
   .gift-name{
@@ -141,8 +174,13 @@ export default{
     min-height:75px;
   }
 
+  .jobpoints{
+    font-size:14px;
+    color:#f1feae;
+  }
+
   .bouncing-item{
-    animation: h2Ani 3000ms ease-in-out 1000ms infinite;
+    animation: h2Ani 1s ease-in-out 1000ms infinite;
   }
 
   .star-icon{
