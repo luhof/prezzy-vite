@@ -8,3 +8,9 @@ Data comes from this community-driven [spreadsheet](https://docs.google.com/spre
 - install : `npm i`
 - dev server : `npm run dev`
 - prod build : `npm run build`
+
+## Todo
+
+- filter by rarity desc/asc or alphabetically
+- quick search filter
+- RESPONSIVENESS
