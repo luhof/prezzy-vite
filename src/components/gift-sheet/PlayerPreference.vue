@@ -5,7 +5,7 @@ import { computed, Prop } from 'vue'
 import giftsjson from '../../assets/gifts.json'
 import { Gift } from '../../types/gift'
 
-import Character from '../../types/characters'
+import Character from '../../types/character'
 import CharactersList from '../../assets/characters'
 
 import playerprefsjson from '../../assets/playerprefs.json'
@@ -19,43 +19,25 @@ export default{
     props: ['selectedId'],
     setup(props:{selectedId:number}) {
       
-      const getClassNameForIndex = (index:string) => {
-        switch(parseInt(index)){
-          case 1 :
-            return 'text-blue-500';
-            break;
-          case 2 :
-            return 'text-green-500';
-            break;
-          case 3 :
-            return 'text-yellow-500';
-            break;
-          case 4 :
-            return 'text-orange-500';
-            break;
-          case 5 : 
-            return 'text-pink-500';
-            break;
-        }
-      } 
 
-      const getCharactersFromString:Character[] = (charactersStr:string) =>{
+      const getCharactersFromString = (charactersStr:number|string) =>{
+        const newString = charactersStr.toString();
         let charactersArray:Character[] = [];
-        const charactersIndex = charactersStr.split(",");
+        const charactersIndex = newString.split(",");
         charactersIndex.map((characterId)=>{
-          const character:Character= CharactersList.find((elem) => elem.id == parseInt(characterId));
-          charactersArray.push(character);
+          const character:Character|undefined = (CharactersList.find((elem) => elem.id == parseInt(characterId)));
+          charactersArray.push(character as Character);
         })
         return charactersArray;
       }
 
       let giftInfo = computed(() => {
-        const currentGift = giftsjson[props.selectedId];
+        const currentGift = (giftsjson as any)[props.selectedId];
         return currentGift;
       });
 
       let jobPoints = computed(() => {
-        switch(giftsjson[props.selectedId].rarity){
+        switch((giftsjson as any)[props.selectedId].rarity){
           case 1:
             return "11-19"
             break;
@@ -85,18 +67,19 @@ export default{
           3 : getCharactersFromString(currentPreferences["3"]),
           2 : getCharactersFromString(currentPreferences["2"]),
           1 : getCharactersFromString(currentPreferences["1"]),
-        }
+        };
+        console.log(result);
         return result;
       });
 
-      return {preferences, giftInfo, jobPoints, getClassNameForIndex}
+      return {preferences, giftInfo, jobPoints}
     }
 }
 </script>
 
 <template>
 <div class= "  sticky top-0 p-4">
-  <div class="m-4 border-4 border-white rounded-lg backdrop-blur-md">
+  <div class="m-4 border-4 border-white rounded-lg backdrop-blur-md shadow-2xl">
     <div class="gift-info">
       <div class="gift-header p-4">
       <div class="flex">
@@ -135,7 +118,7 @@ export default{
       
     </div>
     <div v-for="(preference, index) in preferences" class="flex">
-      <div v-bind:class="getClassNameForIndex(index)" class="flex items-center">
+      <div class="flex items-center">
         <img class="star-icon" v-bind:src='"stars/"+index+"stars.png"'/>
       </div>
       <div class="flex">
@@ -143,7 +126,6 @@ export default{
           <div
             class="character-avatar"
             v-bind:class="'bg-'+character.file"
-            v-tooltip="character.name"
           >
           </div>
         </div>

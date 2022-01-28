@@ -1,9 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
-import VTooltipPlugin from 'v-tooltip'
+
+//need to get rid of this crappy typeless plugin
+import FloatingVue from 'floating-vue'
 import 'v-tooltip/dist/v-tooltip.css'
 
 createApp(App)
-    .use(VTooltipPlugin)
+    .use(FloatingVue)
     .mount('#app')

@@ -4,4 +4,4 @@ type Character = {
     file: string
 }
 
-export {Character}
+export default Character

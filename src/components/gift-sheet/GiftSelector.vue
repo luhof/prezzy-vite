@@ -15,11 +15,12 @@
         
         const gifts:Gift[] = [];
         for (const key of Object.keys(giftsjson)) {
+          let giftToAdd:any = (giftsjson as any)[key] as any;
           gifts.push({
             id: parseInt(key),
-            name: giftsjson[key].name,
-            description: giftsjson[key].description,
-            rarity: giftsjson[key].rarity
+            name: giftToAdd.name,
+            description: giftToAdd.description,
+            rarity: giftToAdd.rarity
           });
         }
 
@@ -27,28 +28,48 @@
           emit('gift-selected', giftId);
         }
 
-        return { selectGift, gifts }
+        let orderOption = "rardown";
+
+        const changedOrderOption = () => {
+          console.log("changed", orderOption);
+        }
+
+        return { selectGift, gifts, orderOption, changedOrderOption }
     }
   }
 
 </script>
 
 <template>
-  <div class="mr-4 mt-8 mb-4 p-4 border-4 border-white rounded-lg backdrop-blur-md">
+  <div class="mr-4 mt-8 mb-4 p-4 border-4 border-white rounded-lg backdrop-blur-md shadow-2xl">
+    <!--
+    <div class="toolbar flex">
+
+      <div>
+      Order by:
+      <select class="text-black" v-model="orderOption" @change="changedOrderOption">
+        <option value="rardown">Rarity (asc)</option>
+        <option value="rarup">Rarity (desc)</option>
+        <option value="alpha">Alphabetically</option>
+      </select>
+      </div>
+
+    </div>
+    -->
 
     <div class="flex flex-wrap justify-center" id="gift-grid">
-    <div class="prezzy-item-wrapper cursor-pointer m-2"
-      v-for="gift in gifts" :key="gift.id" @click="selectGift(gift.id)"
-      v-tooltip="gift.name"
-      v-bind:class="'prezzy-frame_'+gift.rarity+''"
-    >
-      <div
-          class="prezzy-item m-3"
-          v-bind:class="'prezzy-item_'+gift.id+'_'"
-          
-        >
+      <div class="prezzy-item-wrapper cursor-pointer m-2"
+        v-for="gift in gifts" :key="gift.id" @click="selectGift(gift.id)"
+        
+        v-bind:class="'prezzy-frame_'+gift.rarity+''"
+      >
+        <div
+            class="prezzy-item m-3"
+            v-bind:class="'prezzy-item_'+gift.id+'_'"
+            
+          >
+        </div>
       </div>
-    </div>
       
     </div>
 

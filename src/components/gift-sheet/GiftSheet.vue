@@ -33,6 +33,14 @@ export default {
     <div id="giftSheet-result">
       <PlayerPreference :selectedId="selectedId"/>
     </div>
+
+  </div>
+  <div class="m-4">
+    Made with 🧄 by Lucas Hörand<br/>
+    <a class="underline" href="https://lucas.cool" target="_blank">Website</a>&nbsp;
+    <a class="underline" href="https://twitter.com/luhof" target="_blank">Twitter</a>&nbsp;
+    <a class="underline" href="https://itch.io/luhof" target="_blank">Itch.io</a>&nbsp;
+    <a class="underline" href="https://github.com/luhof" target="_blank">GitHub</a>&nbsp;
   </div>
   
 </template>

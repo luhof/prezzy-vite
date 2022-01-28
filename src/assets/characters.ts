@@ -1,4 +1,4 @@
-import { Character } from "../types/character";
+import Character from "../types/character";
 
 const CharactersList:Character[] = [
     {id:1, name:'Wario', file:'wario'},
