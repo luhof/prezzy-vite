@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'russo_one';
+    src: url('assets/fonts/russoone-regular-webfont.woff2') format('woff2'),
+         url('assets/fonts/russoone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

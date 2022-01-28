@@ -5,7 +5,6 @@ import { computed, Prop } from 'vue'
 import giftsjson from '../../assets/gifts.json'
 import { Gift } from '../../types/gift'
 
-
 import Character from '../../types/characters'
 import CharactersList from '../../assets/characters'
 
@@ -50,8 +49,14 @@ export default{
         return charactersArray;
       }
 
+      let giftInfo = computed(() => {
+        const currentGift = giftsjson[props.selectedId];
+        return currentGift;
+      });
+
       let preferences = computed(() => {
         //get current object
+        //TODO not very clean...
         const currentPreferences = playerprefsjson[props.selectedId-1];
         const result = {
           5 : getCharactersFromString(currentPreferences["5"]),
@@ -63,28 +68,51 @@ export default{
         return result;
       });
 
-      return {preferences, getClassNameForIndex}
+      return {preferences, giftInfo, getClassNameForIndex}
     }
 }
 </script>
 
 <template>
-<div class="bg-red-300 sticky top-0">
-  <div>
+<div class= "  sticky top-0 p-4">
+  <div class="m-4 border-4 border-white rounded-lg backdrop-blur-md">
+    <div class="gift-info">
+      <div class="gift-header p-4">
+      <div class="flex">
+        <div class="gift-id mr-2">
+        N°{{selectedId}}
+        </div>
+        <div class="gift-name">
+          {{giftInfo.name}}
+        </div>
+      </div>
+      </div>
+      <div class="gift-description bg-white bg-opacity-50 backdrop-blur-md text-black flex items-center p-4">
+        <div>
+          <div
+              class="prezzy-item bouncing-item"
+              v-bind:class="'prezzy-item_'+selectedId+'_'"
+          >
+          </div>
+        </div>
+        <p class="ml-4">
+          {{giftInfo.description}}
+        </p>
+      </div>
+      
+    </div>
     <div v-for="(preference, index) in preferences" class="flex">
-    {{index}}
-      <div v-bind:class="getClassNameForIndex(index)">
-        <span>↑</span>
-        <span v-if="parseInt(index) > 3">↑</span>
-        <span v-if="parseInt(index) > 4">↑</span>
+      <div v-bind:class="getClassNameForIndex(index)" class="flex items-center">
+        <img class="star-icon" v-bind:src='"stars/"+index+"stars.png"'/>
       </div>
       <div class="flex">
-        <div
-          class="character-avatar"
-          v-for="character in preference" :key="character.id"
-          v-bind:class="'bg-'+character.file"
-          v-tooltip="character.name"
-        >
+        <div class="character-avatar-wrapper flex items-center"  v-for="character in preference" :key="character.id">
+          <div
+            class="character-avatar"
+            v-bind:class="'bg-'+character.file"
+            v-tooltip="character.name"
+          >
+          </div>
         </div>
       </div>
     </div>
@@ -93,7 +121,33 @@ export default{
 </template>
 
 <style scoped>
+
+  .character-avatar-wrapper{
+    height:64px;
+  }
   .character-avatar{
     margin : 0.5rem;
+  }
+ 
+  .gift-header{
+    background-color : #007f9a;
+  }
+  .gift-name{
+    color : #f1feae;
+  }
+
+  .gift-description{
+    font-size:14px;
+    min-height:75px;
+  }
+
+  .bouncing-item{
+    animation: h2Ani 3000ms ease-in-out 1000ms infinite;
+  }
+
+  .star-icon{
+    width:26px!important;
+    height:26px!important;
+    max-width:none;
   }
 </style>
