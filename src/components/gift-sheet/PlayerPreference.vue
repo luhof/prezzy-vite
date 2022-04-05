@@ -1,9 +1,7 @@
 <script lang="ts">
-import { reactive } from "vue"
 import { computed, Prop } from 'vue'
 
 import giftsjson from '../../assets/gifts.json'
-import { Gift } from '../../types/gift'
 
 import Character from '../../types/character'
 import CharactersList from '../../assets/characters'
@@ -68,7 +66,6 @@ export default{
           2 : getCharactersFromString(currentPreferences["2"]),
           1 : getCharactersFromString(currentPreferences["1"]),
         };
-        console.log(result);
         return result;
       });
 
@@ -106,7 +103,7 @@ export default{
       <div class="gift-rating p-4">
         <div class="flex justify-center m-1">
           <img
-            v-bind:src='giftInfo.rarity > 2 ? "goldstar.png":"bluestar.png"'
+            v-bind:src='giftInfo.rarity > 2 ? "/goldstar.png":"/bluestar.png"'
             v-for="i in giftInfo.rarity" :key="i"
           />
         </div>
@@ -117,16 +114,22 @@ export default{
 
       
     </div>
-    <div v-for="(preference, index) in preferences" class="flex">
+    <div v-for="(preference, index) in preferences" :key="preference.id" class="flex">
       <div class="flex items-center">
-        <img class="star-icon" v-bind:src='"stars/"+index+"stars.png"'/>
+        <img class="star-icon" v-bind:src='"/stars/"+index+"stars.png"'/>
       </div>
       <div class="flex">
         <div class="character-avatar-wrapper flex items-center"  v-for="character in preference" :key="character.id">
           <div
             class="character-avatar"
-            v-bind:class="'bg-'+character.file"
+            v-bind:class="'bgface-'+character.file"
           >
+             <v-tooltip
+              activator="parent"
+              anchor="top"
+              >
+                {{character.name}}
+          </v-tooltip>
           </div>
         </div>
       </div>

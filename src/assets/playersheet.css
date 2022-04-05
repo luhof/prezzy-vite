@@ -2,121 +2,121 @@
     background-image:url('characters_sprites.png');
 }
 
-.bg-wario {
+.bgface-wario {
     width: 50px; height: 50px;
     background-position: -150px -10px;
 }
 
 
-.bg-5volt {
+.bgface-5volt {
     width: 50px; height: 45px;
     background-position: -150px -222px;
 }
 
 
-.bg-9volt {
+.bgface-9volt {
     width: 50px; height: 45px;
     background-position: -220px -222px;
 }
 
 
-.bg-18volt {
+.bgface-18volt {
     width: 50px; height: 50px;
     background-position: -10px -82px;
 }
 
 
-.bg-ana {
+.bgface-ana {
     width: 50px; height: 50px;
     background-position: -80px -82px;
 }
 
 
-.bg-ashley {
+.bgface-ashley {
     width: 50px; height: 45px;
     background-position: -290px -10px;
 }
 
 
-.bg-cricket {
+.bgface-cricket {
     width: 50px; height: 50px;
     background-position: -150px -82px;
 }
 
 
-.bg-crygor {
+.bgface-crygor {
     width: 50px; height: 50px;
     background-position: -220px -10px;
 }
 
 
-.bg-dribble {
+.bgface-dribble {
     width: 50px; height: 50px;
     background-position: -220px -80px;
 }
 
 
-.bg-jimmy {
+.bgface-jimmy {
     width: 50px; height: 52px;
     background-position: -10px -10px;
 }
 
 
-.bg-kat {
+.bgface-kat {
     width: 50px; height: 50px;
     background-position: -10px -152px;
 }
 
 
-.bg-lulu {
+.bgface-lulu {
     width: 50px; height: 48px;
     background-position: -10px -222px;
 }
 
 
-.bg-mantis {
+.bgface-mantis {
     width: 50px; height: 40px;
     background-position: -290px -139px;
 }
 
 
-.bg-mike {
+.bgface-mike {
     width: 50px; height: 52px;
     background-position: -80px -10px;
 }
 
 
-.bg-mona {
+.bgface-mona {
     width: 50px; height: 50px;
     background-position: -80px -152px;
 }
 
 
-.bg-orbulon {
+.bgface-orbulon {
     width: 50px; height: 50px;
     background-position: -150px -152px;
 }
 
 
-.bg-penny {
+.bgface-penny {
     width: 50px; height: 48px;
     background-position: -80px -222px;
 }
 
 
-.bg-pyoro {
+.bgface-pyoro {
     width: 50px; height: 50px;
     background-position: -220px -152px;
 }
 
 
-.bg-red {
+.bgface-red {
     width: 50px; height: 34px;
     background-position: -290px -199px;
 }
 
 
-.bg-spitz {
+.bgface-spitz {
     width: 50px; height: 44px;
     background-position: -290px -75px;
 }

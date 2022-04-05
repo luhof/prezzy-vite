@@ -20,7 +20,6 @@ body{
   font-size: 20px;
   line-height: 34px;
   letter-spacing: 0.3px;
-  overflow-x:hidden;
 }
 #app {
   
@@ -35,97 +34,6 @@ h1{
 
 }
 
-@keyframes hAni{
-  0% {
-    transform: scaleY(1) scaleX(1);
-  }
-  3% {
-      transform: scaleY(1.08) scaleX(0.92);
-  }
-  6% {
-      transform: scaleY(0.95) scaleX(1.05);
-  }
-  9% {
-      transform: scaleY(1) scaleX(1);
-  }
-  100% {
-      transform: scaleY(1) scaleX(1);
-  }
-}
 
-@keyframes bgYellowScrollDiagonal{
-  0% {
-    background-position: 0px 0px;
-  }
-  100% {
-      background-position: -172px 172px;
-  }
-}
-
-@keyframes h2Ani{
-  0% {
-    transform: rotateZ(0deg);
-    transform-origin: left;
-  }
-  8% {
-      transform: rotateZ(-4deg);
-      transform-origin: left;
-  }
-  24% {
-      transform: rotateZ(0deg);
-      transform-origin: right;
-  }
-  32% {
-      transform: rotateZ(4deg);
-      transform-origin: right;
-  }
-  64% {
-      transform: rotateZ(0deg);
-      transform-origin: left;
-  }
-  100% {
-      transform: rotateZ( 0deg);
-      transform-origin: left;
-  }
-}
-
-@keyframes rainbow{
-		100%,0%{
-			color: rgb(255,0,0);
-		}
-		8%{
-			color: rgb(255,127,0);
-		}
-		16%{
-			color: rgb(255,255,0);
-		}
-		25%{
-			color: rgb(127,255,0);
-		}
-		33%{
-			color: rgb(0,255,0);
-		}
-		41%{
-			color: rgb(0,255,127);
-		}
-		50%{
-			color: rgb(0,255,255);
-		}
-		58%{
-			color: rgb(0,127,255);
-		}
-		66%{
-			color: rgb(0,0,255);
-		}
-		75%{
-			color: rgb(127,0,255);
-		}
-		83%{
-			color: rgb(255,0,255);
-		}
-		91%{
-			color: rgb(255,0,127);
-		}
-}
 
 </style>

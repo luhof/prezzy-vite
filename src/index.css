@@ -1,6 +1,10 @@
+@import '@/styles/_animations.scss';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 @font-face {
     font-family: 'russo_one';
