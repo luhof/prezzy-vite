@@ -100,20 +100,20 @@
     
     <div class="toolbar flex">
 
-      <div class="w-full flex">
+      <div class="w-full flex flex-col lg:flex-row">
         <!-- order by -->
-        <div class="flex md:items-center mb-6 w-1/2">
+        <div class="items-center flex mb-6 w-full lg:w-1/2">
           <div class="w-1/3">
             <label
               for="order-option"
-              class="block font-bold mb-1 pr-4">
+              class="block font-bold mb-1 pr-4 shrink-0">
               Order by
             </label>
           </div>
           <div class="w-2/3">
             <select
               v-model="orderOption" @update:modelValue="updateOrder"
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+              class="bg-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight"
               id="order-option"
             >
               <option class="text-black" v-for="option in orderOptionList" :key="option.value" :value="option.value">
@@ -123,10 +123,10 @@
           </div>
         </div>
         <!-- quick search -->
-         <div class="flex md:items-center mb-6 w-1/2">
+         <div class="items-center flex mb-6 w-full lg:w-1/2">
           <div class="w-1/3">
             <label
-              class="block font-bold mb-1 pr-4"
+              class="block font-bold mb-1 pr-4 shrink-0"
               for="search-input"
             >
               Search
@@ -134,25 +134,14 @@
           </div>
           <div class="w-2/3">
             <input
-              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+              class="bg-gray-200 rounded w-full py-2 px-4 text-gray-700"
+              style="caret-color:auto"
               id="search-input"
-              v-model="currentSearch" placeholder=""
+              v-model="currentSearch" placeholder="Search..."
             />
           </div>
         </div>
-        <!--
-        <span>order by: </span>
-        <select v-model="orderOption" @update:modelValue="updateOrder">
-          <option class="text-black" v-for="option in orderOptionList" :key="option.value" :value="option.value">
-            {{ option.text }}
-          </option>
-        </select>-->
       </div>
-      <!--
-      <div>
-        <span>search : </span>
-        <input v-model="currentSearch" placeholder="edit me" />
-      </div>-->
 
     </div>
     
@@ -181,8 +170,6 @@
 </template>
 
 <style scoped>
-
-
   .prezzy-item-wrapper{
     transition: transform 0.3s cubic-bezier(0, 1.8, 1, 1.8);
     transform: translateY(0.7em);

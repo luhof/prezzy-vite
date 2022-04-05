@@ -14,10 +14,12 @@ import '../../assets/playersheet.css'
 export default{
     name: 'PlayerPreference',
     components: {},
-    props: ['selectedId'],
-    setup(props:{selectedId:number}) {
+    emits: ['close-dialog'],
+    props: ['selectedId', 'isDialog'],
+    setup(props:{selectedId:number, isDialog:boolean}, {emit}:any) {
       
 
+      const showCloseButton = props.isDialog;
       const getCharactersFromString = (charactersStr:number|string) =>{
         const newString = charactersStr.toString();
         let charactersArray:Character[] = [];
@@ -38,19 +40,16 @@ export default{
         switch((giftsjson as any)[props.selectedId].rarity){
           case 1:
             return "11-19"
-            break;
            case 2:
             return "24-36"
-            break;
            case 3:
             return "48-72"
-            break;
            case 4:
             return "400-600"
-            break;
            case 5:
             return "1600-2400"
-            break;
+           default:
+             return "???"
         }
         
       })
@@ -69,16 +68,20 @@ export default{
         return result;
       });
 
-      return {preferences, giftInfo, jobPoints}
+      const closeDialog = () => {
+         emit('close-dialog');
+      }
+
+      return {preferences, giftInfo, jobPoints, showCloseButton, closeDialog}
     }
 }
 </script>
 
 <template>
-<div class= "sticky top-0 p-4">
-  <div class="m-4 rounded-lg backdrop-blur-md shadow-2xl">
+<div class= "w-full h-full flex items-center md:w-auto h-auto sticky top-0 p-4">
+  <div class="bg-white/50 shadow-2xl backdrop-blur-md rounded-lg md:m-4 ">
     <div class="gift-info rounded-lg">
-      <div class="gift-header p-4 rounded-lg">
+      <div class="gift-header flex items-center justify-between p-4 rounded-tl-lg rounded-tr-lg">
         <div class="flex font-russo">
           <div class="gift-id mr-2">
           N°{{selectedId}}
@@ -86,6 +89,14 @@ export default{
           <div class="gift-name">
             {{giftInfo.name}}
           </div>
+        </div>
+        <div @click="closeDialog()" v-if="isDialog">
+          <v-icon
+            large
+            class="cursor-pointer"
+          >
+            mdi-close-thick
+          </v-icon>
         </div>
       </div>
       <div class="gift-description bg-white bg-opacity-50 backdrop-blur-sm text-black flex items-center p-4">
@@ -114,7 +125,7 @@ export default{
 
       
     </div>
-    <div v-for="(preference, index) in preferences" :key="preference.id" class="flex">
+    <div v-for="(preference, index) in preferences" :key="preference.id" class="flex justify-center">
       <div class="flex items-center">
         <img class="star-icon" v-bind:src='"/stars/"+index+"stars.png"'/>
       </div>
@@ -134,6 +145,11 @@ export default{
         </div>
       </div>
     </div>
+
+    <v-btn @click="closeDialog()" v-if="isDialog" class="gift-button cursor-pointer m-2">
+      CLOSE
+    </v-btn>
+      
   </div>
 </div>
 </template>
@@ -147,7 +163,7 @@ export default{
     margin : 0.5rem;
   }
  
-  .gift-header, .gift-rating{
+  .gift-header, .gift-rating, .gift-button{
     background-color : #007f9a;
   }
   .gift-name{

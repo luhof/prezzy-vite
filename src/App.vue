@@ -3,8 +3,10 @@ import GiftSheet from './components/gift-sheet/GiftSheet.vue'
 </script>
 
 <template>
-  <h1 class="m-8">🧄WarioWare : Get It Together🧄<br/>Prezzy Guide!!</h1>
-  <GiftSheet/>
+  <v-app class="bg-transparent text-white">
+    <h1 class="m-8">🧄WarioWare : Get It Together🧄<br/>Prezzy Guide!!</h1>
+    <GiftSheet/>
+  </v-app>
 </template>
 
 <style>
