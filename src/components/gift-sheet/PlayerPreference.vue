@@ -78,10 +78,10 @@ export default{
 </script>
 
 <template>
-<div class= "w-full pl-0 flex items-center md:w-auto h-auto sticky top-0 pt-4 pl-4">
+<div class= "w-full p-4 flex items-center md:w-auto h-auto sticky top-0">
   <div class="bg-white/50 shadow-2xl backdrop-blur-md rounded-lg md:mt-4 ">
     <div class="gift-info rounded-lg">
-      <div class="gift-header flex items-center justify-between p-4 rounded-tl-lg rounded-tr-lg">
+      <div class="gift-header flex items-center justify-between p-2 rounded-tl-lg rounded-tr-lg md:p-4">
         <div class="flex font-russo">
           <div class="gift-id mr-2">
           N°{{selectedId}}
@@ -99,7 +99,7 @@ export default{
           </v-icon>
         </div>
       </div>
-      <div class="gift-description bg-white bg-opacity-50 backdrop-blur-sm text-black flex items-center p-4">
+      <div class="gift-description bg-white bg-opacity-50 backdrop-blur-sm text-black flex items-center p-2 md:p-4">
         <div>
           <div
               class="prezzy-item bouncing-item"
@@ -107,11 +107,11 @@ export default{
           >
           </div>
         </div>
-        <p class="ml-4">
+        <p class="ml-4 text-xs md:text-sm">
           {{giftInfo.description}}
         </p>
       </div>
-      <div class="gift-rating p-4">
+      <div class="p-1 gift-rating md:p-4">
         <div class="flex justify-center m-1">
           <img
             v-bind:src='giftInfo.rarity > 2 ? "./goldstar.png":"./bluestar.png"'
