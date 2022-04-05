@@ -96,7 +96,7 @@
 </script>
 
 <template>
-  <div class="mr-4 mt-8 mb-4 p-4 border-4 border-white rounded-lg backdrop-blur-md shadow-2xl">
+  <div class="mr-4 mt-8 mb-4 p-4 rounded-lg backdrop-blur-md shadow-2xl">
     
     <div class="toolbar flex">
 

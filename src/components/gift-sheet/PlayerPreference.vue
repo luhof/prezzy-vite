@@ -75,18 +75,18 @@ export default{
 </script>
 
 <template>
-<div class= "  sticky top-0 p-4">
-  <div class="m-4 border-4 border-white rounded-lg backdrop-blur-md shadow-2xl">
-    <div class="gift-info">
-      <div class="gift-header p-4">
-      <div class="flex">
-        <div class="gift-id mr-2">
-        N°{{selectedId}}
+<div class= "sticky top-0 p-4">
+  <div class="m-4 rounded-lg backdrop-blur-md shadow-2xl">
+    <div class="gift-info rounded-lg">
+      <div class="gift-header p-4 rounded-lg">
+        <div class="flex font-russo">
+          <div class="gift-id mr-2">
+          N°{{selectedId}}
+          </div>
+          <div class="gift-name">
+            {{giftInfo.name}}
+          </div>
         </div>
-        <div class="gift-name">
-          {{giftInfo.name}}
-        </div>
-      </div>
       </div>
       <div class="gift-description bg-white bg-opacity-50 backdrop-blur-sm text-black flex items-center p-4">
         <div>

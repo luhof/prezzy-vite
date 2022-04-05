@@ -27,7 +27,7 @@ export default {
 
 <template>
   <div id="giftSheet-wrapper" class="flex p-5">
-    <div id="giftSheet-selector" class="col-span-1">
+    <div id="giftSheet-selector" class="grow">
       <GiftSelector :selectedId="selectedId" @gift-selected="onGiftSelected"/>
     </div>
     <div id="giftSheet-result">
@@ -50,4 +50,9 @@ export default {
     max-width:1280px;
     margin:auto;
   }
+  #giftSheet-result{
+    flex-basis:360px;
+    flex-shrink:0;
+  }
+  
 </style>
