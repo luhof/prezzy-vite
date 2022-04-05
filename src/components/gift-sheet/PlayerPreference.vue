@@ -78,8 +78,8 @@ export default{
 </script>
 
 <template>
-<div class= "w-full h-full flex items-center md:w-auto h-auto sticky top-0 p-4">
-  <div class="bg-white/50 shadow-2xl backdrop-blur-md rounded-lg md:m-4 ">
+<div class= "w-full pl-0 flex items-center md:w-auto h-auto sticky top-0 pt-4 pl-4">
+  <div class="bg-white/50 shadow-2xl backdrop-blur-md rounded-lg md:mt-4 ">
     <div class="gift-info rounded-lg">
       <div class="gift-header flex items-center justify-between p-4 rounded-tl-lg rounded-tr-lg">
         <div class="flex font-russo">
@@ -114,7 +114,7 @@ export default{
       <div class="gift-rating p-4">
         <div class="flex justify-center m-1">
           <img
-            v-bind:src='giftInfo.rarity > 2 ? "/goldstar.png":"/bluestar.png"'
+            v-bind:src='giftInfo.rarity > 2 ? "./goldstar.png":"./bluestar.png"'
             v-for="i in giftInfo.rarity" :key="i"
           />
         </div>
@@ -127,7 +127,7 @@ export default{
     </div>
     <div v-for="(preference, index) in preferences" :key="preference.id" class="flex justify-center">
       <div class="flex items-center">
-        <img class="star-icon" v-bind:src='"/stars/"+index+"stars.png"'/>
+        <img class="star-icon" v-bind:src='"./stars/"+index+"stars.png"'/>
       </div>
       <div class="flex">
         <div class="character-avatar-wrapper flex items-center"  v-for="character in preference" :key="character.id">

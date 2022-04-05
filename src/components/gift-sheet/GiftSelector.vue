@@ -96,7 +96,7 @@
 </script>
 
 <template>
-  <div class="mr-4 mt-8 mb-4 p-4 rounded-lg backdrop-blur-md shadow-2xl">
+  <div class="mt-8 mb-4 p-4 rounded-lg backdrop-blur-md shadow-2xl">
     
     <div class="toolbar flex">
 
@@ -162,6 +162,10 @@
             {{gift.name}}
           </v-tooltip>
         </div>
+      </div>
+
+      <div v-if="filteredResult.length <= 0">
+        No result :(
       </div>
       
     </div>
