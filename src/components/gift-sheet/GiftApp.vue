@@ -2,43 +2,42 @@
 import PlayerPreference from './PlayerPreference.vue'
 import GiftSelector from './GiftSelector.vue'
 
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { useDisplay } from 'vuetify'
+import { useStore } from 'vuex'
+
 
 export default {
-  name: 'GiftSheet',
+  name: 'GiftApp',
     components: {GiftSelector, PlayerPreference},
     props: [],
      mounted () {
-    
-  },
+
+    },
     setup() {
     const display = useDisplay()
+    const store = useStore()
 
     // display thresholds are not reactive
     // and do not need to use .value
-      let selectedId = ref<number>(5);
-      const changeselectedId = () => {
-        selectedId.value++;
-      }
-      const onGiftSelected = (giftId:number) => {
-        selectedId.value=giftId;
+      const gifts = store.getters.GET_GIFTS_LIST;
+      let selectedId = store.state.selectedId;
+
+      const onGiftSelected = () => {
         if(display.smAndDown.value){
           dialog.value = true;
         }
       }
-      const count = computed(() => {
-        return selectedId.value*2;
-      });
 
       let dialog = ref(false);
 
-      return {count, selectedId, onGiftSelected, changeselectedId, dialog}
+      return {selectedId, onGiftSelected, dialog}
     }
 }
 </script>
 
 <template>
+
   <div id="giftSheet-wrapper" class="w-full flex p-5 flex-col md:flex-row">
     <div id="giftSheet-selector" class="w-full">
       <GiftSelector :selectedId="selectedId" @gift-selected="onGiftSelected"/>
@@ -46,7 +45,7 @@ export default {
 
     <!-- result sheet desktop -->
     <div id="giftSheet-result" class="hidden md:block">
-      <PlayerPreference :selectedId="selectedId"/>
+      <PlayerPreference/>
     </div>
 
     <!-- result sheet dialog mobile -->
@@ -55,7 +54,7 @@ export default {
       opacity="0.1"
       class="flex items-center justify-center"
     >
-      <PlayerPreference :selectedId="selectedId" :isDialog="true" @close-dialog="dialog=false"/>
+      <PlayerPreference :isDialog="true" @close-dialog="dialog=false"/>
     </v-overlay>
 
   </div>

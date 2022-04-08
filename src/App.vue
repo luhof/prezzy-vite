@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import GiftSheet from './components/gift-sheet/GiftSheet.vue'
+import GiftApp from './components/gift-sheet/GiftApp.vue'
 </script>
 
 <template>
   <v-app class="bg-transparent text-white">
     <h1 class="m-8 text-3xl md:text-5xl">WarioWare<br/>Get It Together</h1>
     <h2>PREZZY GUIDE!!</h2>
-    <GiftSheet/>
+    <GiftApp/>
   </v-app>
 </template>
 

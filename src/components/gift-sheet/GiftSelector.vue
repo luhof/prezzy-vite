@@ -3,8 +3,11 @@
   import { computed, ref } from "vue";
   import giftsjson from '../../assets/gifts.json'
   import { Gift } from '../../types/gift'
+  import { useStore } from 'vuex'
+  import {GET_GIFTS_LIST} from '@/store/mutations-types'
 
   import '../../assets/prezzysheet.css'
+import { SET_SELECTED_ID } from '../../store/mutations-types';
 
   export default{
     name: 'GiftSelector',
@@ -12,20 +15,12 @@
     emits: ['gift-selected'],
     props: ['selectedId'],
     setup(props:any, { emit }:any) {
-        
-        const gifts:Gift[] = [];
-        for (const key of Object.keys(giftsjson)) {
-          let giftToAdd:any = (giftsjson as any)[key] as any;
-          gifts.push({
-            id: parseInt(key),
-            name: giftToAdd.name,
-            description: giftToAdd.description,
-            rarity: giftToAdd.rarity
-          });
-        }
+        const store = useStore()
+        const gifts:Gift[] = store.getters.GET_GIFTS_LIST;
 
         const selectGift = (giftId:number) => {
-          emit('gift-selected', giftId);
+          store.commit(SET_SELECTED_ID, giftId);
+          emit('gift-selected');
         }
 
         const orderOption = ref('rarasc');
@@ -85,7 +80,6 @@
           })
         }
         else return sortedGifts;
-     
   
       });
 

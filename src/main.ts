@@ -5,7 +5,9 @@ import { loadFonts } from './plugins/webfontloader'
 
 loadFonts()
 import './index.css'
+import store from './store'
 
 createApp(App)
+  .use(store)
   .use(vuetify)
   .mount('#app')

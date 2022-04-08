@@ -1,14 +1,10 @@
 <script lang="ts">
-import { computed, Prop } from 'vue'
+import { computed } from 'vue'
 
-import giftsjson from '../../assets/gifts.json'
-
-import Character from '../../types/character'
 import CharactersList from '../../assets/characters'
 
-import playerprefsjson from '../../assets/playerprefs.json'
-
 import '../../assets/playersheet.css'
+import { useStore } from 'vuex'
 
 
 export default{
@@ -16,28 +12,16 @@ export default{
     components: {},
     emits: ['close-dialog'],
     props: ['selectedId', 'isDialog'],
-    setup(props:{selectedId:number, isDialog:boolean}, {emit}:any) {
+    setup(props:{isDialog:boolean}, {emit}:any) {
       
+      const store = useStore()
+      const charactersList = CharactersList;
 
       const showCloseButton = props.isDialog;
-      const getCharactersFromString = (charactersStr:number|string) =>{
-        const newString = charactersStr.toString();
-        let charactersArray:Character[] = [];
-        const charactersIndex = newString.split(",");
-        charactersIndex.map((characterId)=>{
-          const character:Character|undefined = (CharactersList.find((elem) => elem.id == parseInt(characterId)));
-          charactersArray.push(character as Character);
-        })
-        return charactersArray;
-      }
 
-      let giftInfo = computed(() => {
-        const currentGift = (giftsjson as any)[props.selectedId];
-        return currentGift;
-      });
-
+      let giftInfo = computed(() => store.getters.GET_GIFT(store.state.selectedId));
       let jobPoints = computed(() => {
-        switch((giftsjson as any)[props.selectedId].rarity){
+        switch(giftInfo.value.rarity){
           case 1:
             return "11-19"
            case 2:
@@ -51,28 +35,17 @@ export default{
            default:
              return "???"
         }
-        
       })
 
       let preferences = computed(() => {
-        //get current object
-        //TODO not very clean...
-        const currentPreferences = playerprefsjson[props.selectedId-1];
-        const result = {
-          5 : getCharactersFromString(currentPreferences["5"]),
-          4 : getCharactersFromString(currentPreferences["4"]),
-          3 : getCharactersFromString(currentPreferences["3"]),
-          2 : getCharactersFromString(currentPreferences["2"]),
-          1 : getCharactersFromString(currentPreferences["1"]),
-        };
-        return result;
+        return store.getters.GET_PREFERENCES(giftInfo.value.id);
       });
 
       const closeDialog = () => {
          emit('close-dialog');
       }
 
-      return {preferences, giftInfo, jobPoints, showCloseButton, closeDialog}
+      return {preferences, giftInfo, jobPoints, showCloseButton, closeDialog, charactersList}
     }
 }
 </script>
@@ -84,7 +57,7 @@ export default{
       <div class="gift-header flex items-center justify-between p-2 rounded-tl-lg rounded-tr-lg md:p-4">
         <div class="flex font-russo">
           <div class="gift-id mr-2">
-          N°{{selectedId}}
+          N°{{giftInfo.id}}
           </div>
           <div class="gift-name">
             {{giftInfo.name}}
@@ -103,7 +76,7 @@ export default{
         <div>
           <div
               class="prezzy-item bouncing-item"
-              v-bind:class="'prezzy-item_'+selectedId+'_'"
+              v-bind:class="'prezzy-item_'+giftInfo.id+'_'"
           >
           </div>
         </div>
@@ -125,9 +98,9 @@ export default{
 
       
     </div>
-    <div v-for="(preference, index) in preferences" :key="preference.id" class="flex justify-center">
+    <div v-for="(preference, index) in preferences.ratings" :key="index" class="flex justify-center">
       <div class="flex items-center">
-        <img class="star-icon" v-bind:src='"./stars/"+index+"stars.png"'/>
+        <img class="star-icon" v-bind:src='"stars/_"+(index+1)+"star.png"'/>
       </div>
       <div class="flex">
         <div class="character-avatar-wrapper flex items-center"  v-for="character in preference" :key="character.id">
