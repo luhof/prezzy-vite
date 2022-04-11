@@ -19,7 +19,7 @@ export default createStore({
       return state.gifts
     },
     [GET_GIFT]: (state) => (id:number) => {
-      return state.gifts[id-1] 
+      return state.gifts.find(gift => gift.id == id);
     },
     [GET_PREFERENCES]: (state) => (giftId:number) => {
       //copy to avoid modifying base json file
