@@ -12,7 +12,6 @@
     name: 'GiftSelector',
     components: {},
     emits: ['gift-selected'],
-    props: ['selectedId'],
     setup(props:any, { emit }:any) {
         const store = useStore()
 
