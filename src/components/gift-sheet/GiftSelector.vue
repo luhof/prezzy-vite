@@ -1,5 +1,5 @@
 
-<script lang="ts">
+<script setup lang="ts">
   import { computed, ref } from "vue";
 
   import { Gift } from '../../types/gift'
@@ -8,83 +8,77 @@
   import '../../assets/prezzysheet.css'
   import { SET_SELECTED_ID } from '../../store/mutations-types';
 
-  export default{
-    name: 'GiftSelector',
-    components: {},
-    emits: ['gift-selected'],
-    setup(props:any, { emit }:any) {
-        const store = useStore()
+  const emit = defineEmits(['gift-selected'])
 
-        const selectGift = (giftId:number) => {
-          store.commit(SET_SELECTED_ID, giftId);
-          emit('gift-selected');
-        }
+  const store = useStore()
 
-        const orderOption = ref('rarasc');
-        let currentSearch = ref('');
+  const selectGift = (giftId:number) => {
+    store.commit(SET_SELECTED_ID, giftId);
+    emit('gift-selected');
+  }
 
-        const orderOptionList = ref([
-         {
-           text:"ID/Rarity ↑",
-           value:"rarasc"
-         },
-         {
-           text:"ID/Rarity ↓",
-           value:"rardesc"
-         },
-         {
-           text:"Name ↑",
-           value:"alphaasc"
-         },
-         {
-           text:"Name ↓",
-           value:"alphadesc"
-         },
-        ]);
+  const orderOption = ref('rarasc');
+  let currentSearch = ref('');
 
-        const sortGifts = (giftList:Gift[], selectedSort:string):Gift[] => {
-          switch(selectedSort){
-            case "rarasc":
-              return giftList.sort((a, b) => {
-                return a.id > b.id ? 1 : -1;
-              })
-            case "rardesc":
-              return giftList.sort((a, b) => {
-                return a.id < b.id ? 1 : -1;
-              })
-            case "alphaasc":
-              return giftList.sort((a, b) => {
-                return a.name > b.name ? 1 : -1;
-              })
-            case "alphadesc":
-              return giftList.sort((a, b) => {
-                return a.name < b.name ? 1 : -1;
-              })
-            default:
-              return giftList;
-          }
-        }
+  const orderOptionList = ref([
+    {
+      text:"ID/Rarity ↑",
+      value:"rarasc"
+    },
+    {
+      text:"ID/Rarity ↓",
+      value:"rardesc"
+    },
+    {
+      text:"Name ↑",
+      value:"alphaasc"
+    },
+    {
+      text:"Name ↓",
+      value:"alphadesc"
+    },
+  ]);
 
-        const filterGifts = (gifts:Gift[], currentSearch:string):Gift[] => {
-          if (currentSearch != '' && currentSearch) {
-          return gifts.filter((item) => {
-            return item.name
-              .toLowerCase()
-              .includes(currentSearch.toLowerCase())
-            })
-         }
-          else return gifts;
-        }
-
-        const filteredResult = computed(() => {
-          const gifts:Gift[] = store.getters['GET_GIFTS_LIST'];
-          const sortedGifts:Gift[] = sortGifts(gifts, orderOption.value);
-          return filterGifts(sortedGifts, currentSearch.value);
-      });
-
-      return { selectGift, orderOption, orderOptionList, currentSearch, filteredResult }
+  const sortGifts = (giftList:Gift[], selectedSort:string):Gift[] => {
+    switch(selectedSort){
+      case "rarasc":
+        return giftList.sort((a, b) => {
+          return a.id > b.id ? 1 : -1;
+        })
+      case "rardesc":
+        return giftList.sort((a, b) => {
+          return a.id < b.id ? 1 : -1;
+        })
+      case "alphaasc":
+        return giftList.sort((a, b) => {
+          return a.name > b.name ? 1 : -1;
+        })
+      case "alphadesc":
+        return giftList.sort((a, b) => {
+          return a.name < b.name ? 1 : -1;
+        })
+      default:
+        return giftList;
     }
   }
+
+  const filterGifts = (gifts:Gift[], currentSearch:string):Gift[] => {
+    if (currentSearch != '' && currentSearch) {
+    return gifts.filter((item) => {
+      return item.name
+        .toLowerCase()
+        .includes(currentSearch.toLowerCase())
+      })
+    }
+    else return gifts;
+  }
+
+  const filteredResult = computed(() => {
+    const gifts:Gift[] = store.getters['GET_GIFTS_LIST'];
+    const sortedGifts:Gift[] = sortGifts(gifts, orderOption.value);
+    return filterGifts(sortedGifts, currentSearch.value);
+});
+
 
 </script>
 

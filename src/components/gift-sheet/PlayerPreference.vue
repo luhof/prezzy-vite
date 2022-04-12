@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import { computed } from 'vue'
 
 import CharactersList from '../../assets/characters'
@@ -6,53 +6,42 @@ import CharactersList from '../../assets/characters'
 import '../../assets/playersheet.css'
 import { useStore } from 'vuex'
 
+const emit = defineEmits(['close-dialog']);
+const props = defineProps(['selectedId', 'isDialog'])
 
-export default{
-    name: 'PlayerPreference',
-    components: {},
-    emits: ['close-dialog'],
-    props: ['selectedId', 'isDialog'],
-    setup(props:{isDialog:boolean}, {emit}:any) {
-      
-      const store = useStore()
-      const charactersList = CharactersList;
+const store = useStore()
 
-      const showCloseButton = props.isDialog;
+let giftInfo = computed(() => store.getters.GET_GIFT(store.state.selectedId));
+let jobPoints = computed(() => {
+  switch(giftInfo.value.rarity){
+    case 1:
+      return "11-19"
+      case 2:
+      return "24-36"
+      case 3:
+      return "48-72"
+      case 4:
+      return "400-600"
+      case 5:
+      return "1600-2400"
+      default:
+        return "???"
+  }
+})
 
-      let giftInfo = computed(() => store.getters.GET_GIFT(store.state.selectedId));
-      let jobPoints = computed(() => {
-        switch(giftInfo.value.rarity){
-          case 1:
-            return "11-19"
-           case 2:
-            return "24-36"
-           case 3:
-            return "48-72"
-           case 4:
-            return "400-600"
-           case 5:
-            return "1600-2400"
-           default:
-             return "???"
-        }
-      })
+let preferences = computed(() => {
+  return store.getters.GET_PREFERENCES(giftInfo.value.id);
+});
 
-      let preferences = computed(() => {
-        return store.getters.GET_PREFERENCES(giftInfo.value.id);
-      });
-
-      const closeDialog = () => {
-         emit('close-dialog');
-      }
-
-      return {preferences, giftInfo, jobPoints, showCloseButton, closeDialog, charactersList}
-    }
+const closeDialog = () => {
+    emit('close-dialog');
 }
+   
 </script>
 
 <template>
 <div class= "w-full p-4 flex items-center md:w-auto h-auto sticky top-0">
-  <div class="bg-white/50 shadow-2xl backdrop-blur-md rounded-lg md:mt-4 ">
+  <div class="w-full bg-white/50 shadow-2xl backdrop-blur-md rounded-lg md:mt-4 ">
     <div class="gift-info rounded-lg">
       <div class="gift-header flex items-center justify-between p-2 rounded-tl-lg rounded-tr-lg md:p-4">
         <div class="flex font-russo">

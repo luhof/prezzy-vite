@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import PlayerPreference from './PlayerPreference.vue'
 import GiftSelector from './GiftSelector.vue'
 
@@ -7,33 +7,20 @@ import { useDisplay } from 'vuetify'
 import { useStore } from 'vuex'
 
 
-export default {
-  name: 'GiftApp',
-    components: {GiftSelector, PlayerPreference},
-    props: [],
-     mounted () {
+const display = useDisplay()
+const store = useStore()
 
-    },
-    setup() {
-    const display = useDisplay()
-    const store = useStore()
+const gifts = store.getters.GET_GIFTS_LIST;
+let selectedId = store.state.selectedId;
 
-    // display thresholds are not reactive
-    // and do not need to use .value
-      const gifts = store.getters.GET_GIFTS_LIST;
-      let selectedId = store.state.selectedId;
-
-      const onGiftSelected = () => {
-        if(display.smAndDown.value){
-          dialog.value = true;
-        }
-      }
-
-      let dialog = ref(false);
-
-      return {selectedId, onGiftSelected, dialog}
-    }
+const onGiftSelected = () => {
+  if(display.smAndDown.value){
+    dialog.value = true;
+  }
 }
+
+let dialog = ref(false);
+
 </script>
 
 <template>
@@ -53,7 +40,7 @@ export default {
       v-model="dialog"
       id="giftSheet-dialog"
       opacity="0.1"
-      class="flex items-center justify-center"
+      class="p-0 flex items-center justify-center"
     >
       <PlayerPreference :isDialog="true" @close-dialog="dialog=false"/>
     </v-overlay>
