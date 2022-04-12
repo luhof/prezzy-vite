@@ -56,9 +56,7 @@ export default{
     <div class="gift-info rounded-lg">
       <div class="gift-header flex items-center justify-between p-2 rounded-tl-lg rounded-tr-lg md:p-4">
         <div class="flex font-russo">
-          <div class="gift-id mr-2">
-          N°{{giftInfo.id}}
-          </div>
+          <div class="gift-id mr-2">N°{{giftInfo.id}}</div>
           <div class="gift-name">
             {{giftInfo.name}}
           </div>
@@ -76,7 +74,7 @@ export default{
         <div>
           <div
               class="prezzy-item bouncing-item"
-              v-bind:class="'prezzy-item_'+giftInfo.id+'_'"
+              v-bind:class="'prezzy-item_'+giftInfo.id"
           >
           </div>
         </div>
@@ -119,7 +117,11 @@ export default{
       </div>
     </div>
 
-    <v-btn @click="closeDialog()" v-if="isDialog" class="gift-button cursor-pointer m-2">
+    <v-btn
+    data-cy="dialog-close"
+    @click="closeDialog()"
+    v-if="isDialog" class="gift-button cursor-pointer m-2"
+    >
       CLOSE
     </v-btn>
       

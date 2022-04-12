@@ -143,10 +143,11 @@
       <div class="prezzy-item-wrapper cursor-pointer m-2"
         v-for="gift in filteredResult" :key="gift.id" @click="selectGift(gift.id)"
         v-bind:class="'prezzy-frame_'+gift.rarity+''"
+        v-bind:data-prezzy-id="gift.id"
       >
         <div
             class="prezzy-item m-3"
-            v-bind:class="'prezzy-item_'+gift.id+'_'"
+            v-bind:class="'prezzy-item_'+gift.id"
         >
           <v-tooltip
           activator="parent"

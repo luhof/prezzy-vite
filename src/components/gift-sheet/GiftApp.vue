@@ -51,6 +51,7 @@ export default {
     <!-- result sheet dialog mobile -->
     <v-overlay
       v-model="dialog"
+      id="giftSheet-dialog"
       opacity="0.1"
       class="flex items-center justify-center"
     >

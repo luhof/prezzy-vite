@@ -6,9 +6,12 @@
     "build": "vite build",
     "dev": "vite",
     "preview": "vite preview",
-    "test": "jest src"
+    "test": "jest src",
+    "e2e": "./node_modules/.bin/cypress open"
   },
   "dependencies": {
+    "@cypress/vue": "^3.1.0",
+    "@cypress/webpack-dev-server": "^1.8.4",
     "@mdi/font": "5.9.55",
     "floating-vue": "^2.0.0-beta.3",
     "roboto-fontface": "*",
@@ -27,6 +30,7 @@
     "@vue/test-utils": "^2.0.0-rc.18",
     "@vuetify/vite-plugin": "^1.0.0-alpha.0",
     "autoprefixer": "^10.4.1",
+    "cypress": "^9.5.4",
     "jest": "^26.6.3",
     "postcss": "^8.4.5",
     "sass": "^1.38.0",
